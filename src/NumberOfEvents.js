@@ -14,12 +14,12 @@ class NumberOfEvents extends Component {
 
   render() {
     return (
-      <div className='event-number'>
+      <div className='count'>
         <label htmlFor='numberOfEvent'></label>
         <input
           type='number'
           name='numberOfEvent'
-          className='event-number-input'
+          className='countin'
           placeholder='Enter Number of Events'
           value={this.state.eventValue}
           onChange={this.handleEventInputChanged}
