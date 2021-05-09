@@ -12,9 +12,9 @@ describe('<NumberOfEvents /> component', () => {
     expect(NumberOfEventsWrapper.find('.countin')).toHaveLength(1);
   });
 
-  test('check input default value is 32', () => {
+  test('check input default value is 10', () => {
     expect(NumberOfEventsWrapper.find('.countin').at(0).props().value
-    ).toEqual(32);
+    ).toEqual(10);
   });
 
   test('check placeholder', () => {
