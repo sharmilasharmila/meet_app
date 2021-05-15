@@ -1,19 +1,22 @@
 'use strict';
 import puppeteer from 'puppeteer';
+import React from 'react';
+import { mount } from 'enzyme';
+import App from '../App';
+import { mockData } from '../mock-data';
 
 describe('show/hide an event details', () => {
   let browser;
   let page;
-  jest.setTimeout(30000);
-
   beforeAll(async () => {
+    jest.setTimeout(30000);
     browser = await puppeteer.launch({
         headless: false,
         slowMo: 250, // slow down by 250ms
         ignoreDefaultArgs: ['--disable-extensions'] // ignores default setting that causes timeout errors
     });
     page = await browser.newPage();
-    await page.goto('http://localhost:3000/');
+    await page.goto('http://localhost:8077/');
     await page.waitForSelector('.event');
   });
 

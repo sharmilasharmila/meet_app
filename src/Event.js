@@ -18,7 +18,7 @@ class Event extends Component {
     return (
       <div className='container'>
         <h1>{event.summary}</h1>
-        <p>{event.start.dateTime}</p>
+        {/* <p>{event.start.dateTime}</p> */}
         <p className='locations'>{event.location}</p>
 
         {this.state.showHideDetails && (
