@@ -39,7 +39,6 @@ class App extends Component {
   }
 
   render() {
-    const { events, numberOfEvents, eventsByLocation } = this.state;
     return (
       <div className='App'>
       <h1>MEET_APP</h1>
