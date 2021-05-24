@@ -9,3 +9,4 @@ Feature: Specify Number Of Events
     Given The user wanted to view few number of events
     When The user enters number of events in the text-box
     Then The user will only see the number of events he wished for
+
