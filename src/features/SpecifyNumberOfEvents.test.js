@@ -15,13 +15,13 @@ defineFeature(feature, test => {
     let AppWrapper;
     let EventListWrapper;
 
-    test('When user hasn’t specified a number, 32 is the default number', ({ given, when, then }) => {
+    test('When user hasn’t specified a number, 10 is the default number', ({ given, when, then }) => {
         given('The user did not mention how many events he wants to see', () => {
 
         });
 
         when('The user is in the events page', () => {
-            NumberOfEventsWrapper = shallow(<NumberOfEvents />); 
+            NumberOfEventsWrapper = shallow(<NumberOfEvents />);
         });
 
         then('He will get information of 10 events', () => {
