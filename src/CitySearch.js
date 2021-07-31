@@ -3,7 +3,7 @@ import { InfoAlert } from './Alert';
 
 class CitySearch extends Component {
   state = {
-    query: 'Munich',
+    query: '',
     suggestions: [],
     showSuggestions: undefined
 
@@ -15,7 +15,7 @@ class CitySearch extends Component {
       showSuggestions: false,
       infoText:''
     });
-    this.props.updateEvents(suggestion);
+    this.props.updateEvents(suggestion, 0);
   }
 
   handleInputChanged = (event) => {
@@ -24,6 +24,13 @@ class CitySearch extends Component {
   const suggestions = this.props.locations.filter((location) => {
     return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
   });
+  if (value === '') {
+    this.setState({
+      suggestions: [],
+      query: '',
+      showSuggestions: false,
+    })
+  };
   if (suggestions.length === 0) {
     this.setState({
       query: value,
@@ -48,6 +55,7 @@ class CitySearch extends Component {
           value={this.state.query}
           onChange={this.handleInputChanged}
           onFocus={() => { this.setState({ showSuggestions: true }) }}
+          placeholder="Enter Location..."
         />
         <ul className='suggestions' style={this.state.showSuggestions ? {}: { display: 'none' }}>
           {this.state.suggestions.map((suggestion) => (

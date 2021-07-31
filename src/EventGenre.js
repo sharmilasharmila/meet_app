@@ -18,6 +18,7 @@ const EventGenre = ({ events }) => {
 
     useEffect(() => { 
         setData(() => getData());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [events]); 
 
     const colors = ['#000ab4', '#c1000a', '#e300f2', '#23d900', '#000308']

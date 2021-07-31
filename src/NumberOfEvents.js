@@ -7,20 +7,20 @@ class NumberOfEvents extends Component {
   };
 
   handleEventInputChanged = (event) => {
-    const eventValue = event.target.value;
-    if (eventValue < 1){
+    const value = event.target.value;
+    if (value < 1){
       return this.setState({
         eventValue: '',
         errorText: "The value cannot be Zero or Negative"
       });
-    } else if (eventValue > 10){
+    } else if (value > 32){
       return this.setState({
         eventValue: '',
-        errorText: "Enter a value less than 10"
+        errorText: "Enter a value less than 32"
       });
     } else {
       this.setState({
-        eventValue,
+        eventValue: value,
         errorText:''
     });
   }
@@ -29,7 +29,9 @@ class NumberOfEvents extends Component {
   render() {
     return (
       <div className='count'>
-        <label htmlFor='numberOfEvent'></label>
+        <label htmlFor='numberOfEvent'>
+          Number of Events
+        </label>
         <input
           type='number'
           name='numberOfEvent'

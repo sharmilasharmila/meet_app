@@ -17,7 +17,7 @@ class App extends Component {
     numberOfEvents: 10
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.mounted = true;
     const { numberOfEvents } = this.state;
     getEvents().then((events) => {
